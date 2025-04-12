@@ -4,6 +4,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import requests
 import json
+import os # Import os to potentially get port from environment variables
 
 # Create a Flask application instance
 app = Flask(__name__)
@@ -136,7 +137,12 @@ def fetch_track_info():
 
 # --- Run the Flask app ---
 if __name__ == '__main__':
-    # Run on localhost, port 5000
-    # Set debug=True for development (provides detailed error pages)
-    # Set debug=False for production
-    app.run(port=8000, debug=True)
+    # Get port from environment variable PORT, default to 8000
+    # Platforms like Koyeb often set the PORT environment variable.
+    port = int(os.environ.get('PORT', 8000))
+
+    # Run the app, binding to 0.0.0.0 to be accessible externally
+    # Set debug=False for production environments like Koyeb
+    # You can use an environment variable to control debug mode:
+    # debug_mode = os.environ.get('FLASK_DEBUG', 'false').lower() == 'true'
+    app.run(host='0.0.0.0', port=port, debug=False) # Changed host, made port dynamic, disabled debug
