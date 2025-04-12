@@ -139,4 +139,4 @@ if __name__ == '__main__':
     # Run on localhost, port 5000
     # Set debug=True for development (provides detailed error pages)
     # Set debug=False for production
-    app.run(debug=True)
+    app.run(port=8000, debug=True)
