@@ -120,7 +120,7 @@ def download_track_endpoint():
     # IMPORTANT: The API key is hardcoded here as per the user's snippet.
     # In a production environment, this should be managed securely (e.g., environment variables).
     headers = {
-        "x-rapidapi-key": "b2ead7e114mshf3e28bc0946cf2fp1208acjsne8d6fb6cb753", # Hardcoded API key
+        "x-rapidapi-key": "99c90a2164msh5eb5b68f0f5ef08p1b0828jsn74aa46966c90", # Hardcoded API key
         "x-rapidapi-host": "spotify-scraper.p.rapidapi.com"
     }
     querystring = {"track": spotify_link, "quality": "hq"} # Using spotify_link from request
