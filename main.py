@@ -77,5 +77,4 @@ def internal_error(error):
     return jsonify({"error": "Internal server error"}), 500
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 8000))
-    app.run(host='0.0.0.0', port=port, debug=False) # Set debug=False for production
+    app.run(host='0.0.0.0', port=8000, debug=False) # Set debug=False for production
